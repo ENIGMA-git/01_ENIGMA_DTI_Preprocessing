@@ -20,6 +20,17 @@ For those that have yet to process DTI data, various suggestions are outlined he
 * If you have multiple b0, were they acquired with the same encoding gradient? If not, slight variations in processing will be needed.
 
 ### Denoising
+There are several different denoising methods that can be appropriately used for the data you have. NOTE: *This is the first step that needs to be taken after dicom to nifti conversion.*
+Before deciding on which method, you will need to check 
+ * Whether or not the data acquired was zero-filled at acquisition (typically done on GE scanners)
+
+Some of the different denoising methods are:
+ * [LPCA](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073021)
+    * _"takes into consideration the multicomponent nature of multi-directional DWI datasets such as those employed in diffusion imaging and reduces random noise in multicomponent DWI by locally shrinking less significant Principal Components using an overcomplete approach"_ 
+ * [AONLM](https://www.hal.inserm.fr/inserm-00454564/en/)
+    * _"designed for spatially varying noise typically presents in parallel imaging, information regarding the local image noise level is used to adjust the amount of denoising strength of the filter"_
+ * [MP-PCA](https://www.ncbi.nlm.nih.gov/pubmed/27523449)
+    * _"exploits the intrinsic redundancy in diffusion MRI using universal properties of the eigenspectrum of random covariance matrices, and removes noise-only principal components -- thereby enabling signal-to-noise ratio enhancements"_  
 
 ### Degibbs
 
@@ -80,14 +91,14 @@ For those that have yet to process DTI data, various suggestions are outlined he
 * Unzip the Matlab scripts from Step 1 and change directories to that folder with the required Matlab *.m scripts. For simplicity, we assume you are working on a Linux machine with the base directory /enigmaDTI/QC_ENIGMA/.
 
 * Make a directory to store all of the QC output:
-    * `mkdir /enigmaDTI/QC_ENIGMA/QC_FA_V1/` 
+    *       mkdir /enigmaDTI/QC_ENIGMA/QC_FA_V1/ 
 * Start Matlab:
-    * `/usr/local/matlab/bin/matlab`
+    *       /usr/local/matlab/bin/matlab
 * Next we will run the func_QC_enigmaDTI_FA_V1.m script that reads the Subject_Path_Info.txt file to create subdirectories in a specified output_directory for each individual subjectID, then create an axial, coronal and sagittal image of the FA_image with vectors from the V1_image overlaid on top. The threshold (0 to ~0.3, default 0.2) overlay the V1 information only on voxels with FA of the specified threshold or greater. Increasing the threshold above 0.1 will run the script faster and is recommended for groups with many subjects.
 
 * In the Matlab command window paste and run:
-```
-        TXTfile='/enigmaDTI/QC_ENIGMA/Subject_Path_Info.txt';
+```     
+    TXTfile='/enigmaDTI/QC_ENIGMA/Subject_Path_Info.txt';
         output_directory='/enigmaDTI/QC_ENIGMA/QC_FA_V1/';
         thresh=0.2;
         [subjs,FAs,VECs]=textread(TXTfile,'%s %s %s','headerlines',1)
