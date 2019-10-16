@@ -24,19 +24,21 @@ There are several different denoising methods that can be appropriately used for
 Before deciding on which method, you will need to check 
  * Whether or not the data acquired was zero-filled at acquisition (typically done on GE scanners). If it is, LPCA will not work effectively and consideration of AONLM/MP-PCA filters may be a better choice
 
-Some of the different denoising methods are:
- * [LPCA](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073021)
-    * _"takes into consideration the multicomponent nature of multi-directional DWI datasets such as those employed in diffusion imaging and reduces random noise in multicomponent DWI by locally shrinking less significant Principal Components using an overcomplete approach"_ 
- * [AONLM](https://www.hal.inserm.fr/inserm-00454564/en/)
-    * _"designed for spatially varying noise typically presents in parallel imaging, information regarding the local image noise level is used to adjust the amount of denoising strength of the filter"_
- * [MP-PCA](https://www.ncbi.nlm.nih.gov/pubmed/27523449)
-    * _"exploits the intrinsic redundancy in diffusion MRI using universal properties of the eigenspectrum of random covariance matrices, and removes noise-only principal components -- thereby enabling signal-to-noise ratio enhancements"_  
+A few of the different denoising methods include:
+ * LPCA
+    * _"takes into consideration the multicomponent nature of multi-directional DWI datasets such as those employed in diffusion imaging and reduces random noise in multicomponent DWI by locally shrinking less significant Principal Components using an overcomplete approach [[Manjón et al., 2013]](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073021)."_
+ * AONLM
+    * _"designed for spatially varying noise typically presents in parallel imaging, information regarding the local image noise level is used to adjust the amount of denoising strength of the filter [[Manjón et al., 2011]](https://www.hal.inserm.fr/inserm-00454564/en/)."_
+ * MP-PCA
+    * _"exploits the intrinsic redundancy in diffusion MRI using universal properties of the eigenspectrum of random covariance matrices, and removes noise-only principal components -- thereby enabling signal-to-noise ratio enhancements [[Veraart et al., 2016]](https://www.ncbi.nlm.nih.gov/pubmed/27523449)."_
 
 ### Degibbs
-Gibbs-ringing is an artifact that is often displayed in MRI images as spurious oscillations nearby sharp image gradients at tissue boundaries. This can be corrected using the method of local subvoxel-shifts proposed by [Kellner et al](https://www.ncbi.nlm.nih.gov/pubmed/26745823).
+Gibbs-ringing is an artifact that is often displayed in MRI images as spurious oscillations nearby sharp image gradients at tissue boundaries. This can be corrected using the method of local subvoxel-shifts proposed by [Kellner et al., 2015](https://www.ncbi.nlm.nih.gov/pubmed/26745823).
 
 Notes:
-
+*    Should be performed directly after denoising and before any other preprocessing steps
+*    This method was developed to work on images acquired with full k-space coverage
+*    "...partial Fourier acquisition demonstrates that incomplete k‐space acquisition schemes propagate the artifact in an obscure nonobvious manner, which might lead to a misinterpretation of image features"
 
 ### Correct for Eddy Current distortions, movement using affine registration
 * A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command.
@@ -47,6 +49,7 @@ Notes:
 * MRtrix dwi2mask
 
 ###  N4 bias field correction
+
 
 ### Correct for EPI induced susceptibility artifacts — this is particularly an issue at higher magnetic fields. (if you only have one phase encoding direction)
 * If you have two opposing b0s and a sufficient amount of diffusion directions obtained, you may use FSL’s TOPUPand EDDY for distortion correction.
