@@ -20,9 +20,9 @@ For those that have yet to process DTI data, various suggestions are outlined he
 * If you have multiple b0, were they acquired with the same encoding gradient? If not, slight variations in processing will be needed.
 
 ### Denoising
-There are several different denoising methods that can be appropriately used for the data you have. NOTE: *This is the first step that needs to be taken after dicom to nifti conversion.*
+There are several different denoising methods that can be appropriately used for the data you have. A few of them are listed below. NOTE: *This is the first step that needs to be taken after dicom to nifti conversion.*
 Before deciding on which method, you will need to check 
- * Whether or not the data acquired was zero-filled at acquisition (typically done on GE scanners)
+ * Whether or not the data acquired was zero-filled at acquisition (typically done on GE scanners). If it is, LPCA will not work effectively and consideration of AONLM/MP-PCA filters may be a better choice
 
 Some of the different denoising methods are:
  * [LPCA](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073021)
@@ -33,6 +33,10 @@ Some of the different denoising methods are:
     * _"exploits the intrinsic redundancy in diffusion MRI using universal properties of the eigenspectrum of random covariance matrices, and removes noise-only principal components -- thereby enabling signal-to-noise ratio enhancements"_  
 
 ### Degibbs
+Gibbs-ringing is an artifact that is often displayed in MRI images as spurious oscillations nearby sharp image gradients at tissue boundaries. This can be corrected using the method of local subvoxel-shifts proposed by [Kellner et al](https://www.ncbi.nlm.nih.gov/pubmed/26745823).
+
+Notes:
+
 
 ### Correct for Eddy Current distortions, movement using affine registration
 * A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command.
