@@ -46,10 +46,14 @@ Notes:
 
 ### Create a mask for your data.
 * FSL’s bet2 offers a solution that is quite robust for many datasets.
-* MRtrix dwi2mask
+* Additionally, MRtrix's _dwi2mask_ command utilizes directional information to generate a mask that may offer a better option for your data
 
 ###  N4 bias field correction
+Often times, data is affected by B1 field inhomogeneity. A DWI series can be corrected using N4 bias field correction.
+* N4 correction is available using ANTs or FSL FAST
+* There is a DWI wrapper for these two options using MRtrix called _dwibiascorrect_
 
+_Note: (explain how an iterative N4/mask process might be helpful here_
 
 ### Correct for EPI induced susceptibility artifacts — this is particularly an issue at higher magnetic fields. (if you only have one phase encoding direction)
 * If you have two opposing b0s and a sufficient amount of diffusion directions obtained, you may use FSL’s TOPUPand EDDY for distortion correction.
