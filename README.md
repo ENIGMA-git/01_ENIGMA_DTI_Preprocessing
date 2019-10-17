@@ -32,7 +32,7 @@ A few of the different denoising methods include:
  * MP-PCA
     * _"exploits the intrinsic redundancy in diffusion MRI using universal properties of the eigenspectrum of random covariance matrices, and removes noise-only principal components -- thereby enabling signal-to-noise ratio enhancements [[Veraart et al., 2016]](https://www.ncbi.nlm.nih.gov/pubmed/27523449)."_
 
-### Degibbs
+### Gibbs ringing artifact correction
 Gibbs-ringing is an artifact that is often displayed in MRI images as spurious oscillations nearby sharp image gradients at tissue boundaries. This can be corrected using the method of local subvoxel-shifts proposed by [Kellner et al., 2015](https://www.ncbi.nlm.nih.gov/pubmed/26745823).
 
 Notes:
@@ -68,7 +68,7 @@ Notes:
 * Most tools will also output FA, MD, and eigenvalue and vector maps simultaneously.
 * FSL’s ‘dtifit’ command is an acceptable and convenient option. It uses least-square fitting to determine the tensor and will output FA and V1 (primary eigenvector) needed for future analyses.   
 
-### Preprocessing Quality Control
+## Preprocessing Quality Control
 #### Protocol for FA and vector alignment QC analysis for ENIGMA-DTI 
 * The following steps will allow you to visualize your raw FA images before registration to the ENIGMA-DTI template, and to see if your principle direction vectors are appropriately aligned to the white matter tracts.
 * These protocols are offered with an unlimited license and without warranty. However, if you find these protocols useful in your research, please provide a link to the ENIGMA website in your work: www.enigma.ini.usc.edu
@@ -98,59 +98,59 @@ Notes:
 * Unzip the Matlab scripts from Step 1 and change directories to that folder with the required Matlab *.m scripts. For simplicity, we assume you are working on a Linux machine with the base directory /enigmaDTI/QC_ENIGMA/.
 
 * Make a directory to store all of the QC output:
-    *       mkdir /enigmaDTI/QC_ENIGMA/QC_FA_V1/ 
+           mkdir /enigmaDTI/QC_ENIGMA/QC_FA_V1/ 
 * Start Matlab:
-    *       /usr/local/matlab/bin/matlab
+           /usr/local/matlab/bin/matlab
 * Next we will run the func_QC_enigmaDTI_FA_V1.m script that reads the Subject_Path_Info.txt file to create subdirectories in a specified output_directory for each individual subjectID, then create an axial, coronal and sagittal image of the FA_image with vectors from the V1_image overlaid on top. The threshold (0 to ~0.3, default 0.2) overlay the V1 information only on voxels with FA of the specified threshold or greater. Increasing the threshold above 0.1 will run the script faster and is recommended for groups with many subjects.
 
 * In the Matlab command window paste and run:
-```     
-    TXTfile='/enigmaDTI/QC_ENIGMA/Subject_Path_Info.txt';
-        output_directory='/enigmaDTI/QC_ENIGMA/QC_FA_V1/';
-        thresh=0.2;
-        [subjs,FAs,VECs]=textread(TXTfile,'%s %s %s','headerlines',1)
-        
-        for s = 1:length(subjs) 
-        subj=subjs(s);
-        Fa=FAs(s);
-        Vec=VECs(s);
-        try
-        % reslice FA
-        [pathstrfa,nameniifa,gzfa] = fileparts(Fa{1,1});
-        [nafa,namefa,niifa] = fileparts(nameniifa);
-        newnamegzfa=[pathstrfa,'/',namefa,'_reslice.nii.gz'];
-        newnamefa=[pathstrfa,'/',namefa,'_reslice.nii'];
-        copyfile(Fa{1,1},newnamegzfa);
-        gunzip(newnamegzfa);
-        delete(newnamegzfa);
-        reslice_nii(newnamefa,newnamefa);
-        
-        % reslice V1
-        [pathstrv1,nameniiv1,gzv1] = fileparts(Vec{1,1});
-        [nav1,namev1,niiv1] = fileparts(nameniiv1);
-        newnamegzv1=[pathstrv1,'/',namev1,'_reslice.nii.gz'];
-        newnamev1=[pathstrv1,'/',namev1,'_reslice.nii'];
-        copyfile(Vec{1,1},newnamegzv1);
-        gunzip(newnamegzv1);
-        delete(newnamegzv1);
-        reslice_nii(newnamev1,newnamev1);
-        
-        % qc
-        func_QC_enigmaDTI_FA_V1(subj,newnamefa,newnamev1, output_directory);
-        
-        close(1)
-        close(2)
-        close(3)
-        
-        % delete
-        delete(newnamefa)
-        delete(newnamev1)
-        end
-        
-        display(['Done with subject: ', num2str(s), ' of ', num2str(length(subjs))]);
-        
-        end
-```
+     
+            TXTfile='/enigmaDTI/QC_ENIGMA/Subject_Path_Info.txt';
+            output_directory='/enigmaDTI/QC_ENIGMA/QC_FA_V1/';
+            thresh=0.2;
+            [subjs,FAs,VECs]=textread(TXTfile,'%s %s %s','headerlines',1)
+            
+            for s = 1:length(subjs) 
+            subj=subjs(s);
+            Fa=FAs(s);
+            Vec=VECs(s);
+            try
+            % reslice FA
+            [pathstrfa,nameniifa,gzfa] = fileparts(Fa{1,1});
+            [nafa,namefa,niifa] = fileparts(nameniifa);
+            newnamegzfa=[pathstrfa,'/',namefa,'_reslice.nii.gz'];
+            newnamefa=[pathstrfa,'/',namefa,'_reslice.nii'];
+            copyfile(Fa{1,1},newnamegzfa);
+            gunzip(newnamegzfa);
+            delete(newnamegzfa);
+            reslice_nii(newnamefa,newnamefa);
+            
+            % reslice V1
+            [pathstrv1,nameniiv1,gzv1] = fileparts(Vec{1,1});
+            [nav1,namev1,niiv1] = fileparts(nameniiv1);
+            newnamegzv1=[pathstrv1,'/',namev1,'_reslice.nii.gz'];
+            newnamev1=[pathstrv1,'/',namev1,'_reslice.nii'];
+            copyfile(Vec{1,1},newnamegzv1);
+            gunzip(newnamegzv1);
+            delete(newnamegzv1);
+            reslice_nii(newnamev1,newnamev1);
+            
+            % qc
+            func_QC_enigmaDTI_FA_V1(subj,newnamefa,newnamev1, output_directory);
+            
+            close(1)
+            close(2)
+            close(3)
+            
+            % delete
+            delete(newnamefa)
+            delete(newnamev1)
+            end
+            
+            display(['Done with subject: ', num2str(s), ' of ', num2str(length(subjs))]);
+            
+            end
+
 
 * For troubleshooting individual subjects that func_QC_enigmaDTI_FA_V1.m script can be run in the command console with the following parameters:
 ``` func_QC_enigmaDTI_FA_V1('subjectID', 'FA_image_path', 'V1_image_path','output_directory') ```
