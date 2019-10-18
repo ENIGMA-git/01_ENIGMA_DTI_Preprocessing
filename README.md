@@ -85,8 +85,8 @@ _Note: (explain how an iterative N4/mask process might be helpful here)_
     * Diffusion-weighted images preprocessed using [FSL’s DTIFIT](http://fsl.fmrib.ox.ac.uk/fsl/fsl4.0/fdt/fdt_dtifit.html) or equivalent. This requires the creation of FA maps and eigenvectors comprising of three volumes, the first being the x-component of the eigenvector, the second being the y-component and the third being the z-component.
 
 ##### Step 1 – Download the utility packages
-* Download the matlab [scripts](http://enigma.ini.usc.edu/wp-content/uploads/DTI_Protocols/enigmaDTI_QC.zip) package for Step 3
-* Download the script([mac](http://enigma.ini.usc.edu/wp-content/uploads/DTI_Protocols/make_enigmaDTI_FA_V1_QC_webpage_mac.sh), [linux](http://enigma.ini.usc.edu/wp-content/uploads/DTI_Protocols/make_enigmaDTI_FA_V1_QC_webpage.sh)] to build the QC webpage for Step 4
+* Download the matlab package for Step 3 made available in this repository titled "enigmaDTI_QC"
+* Download the script(mac: make_enigmaDTI_FA_V1_QC_webpage_mac.sh), linux: make_enigmaDTI_FA_V1_QC_webpage.sh) to build the QC webpage for Step 4
 
 ##### Step 2 – Build a text file defining the location of subject files
 * Create a three column tab-delimited text file (e.g. Subject_Path_Info.txt):
@@ -162,3 +162,26 @@ _Note: (explain how an iterative N4/mask process might be helpful here)_
 ``` func_QC_enigmaDTI_FA_V1('subjectID', 'FA_image_path', 'V1_image_path','output_directory') ```
 
 ##### Step 4 - Make the QC webpage
+Within a terminal session go to the /enigmaDTI/QC_ENIGMA/ directory where you stored the script make_enigmaDTI_FA_V1_QC_webpage.sh and ensure it is executable:
+    
+    chmod 777 make_enigmaDTI_FA_V1_QC_webpage.sh
+
+or for mac:
+    
+    chmod 777 make_enigmaDTI_FA_V1_QC_webpage_mac.sh
+    
+Run the script, specifying the full path to the directory where you stored the Matlab QC output files:
+
+    ./make_enigmaDTI_FA_V1_QC_webpage.sh /enigmaDTI/QC_ENIGMA/QC_FA_V1/ 
+    
+or for mac:
+    
+    sh make_enigmaDTI_FA_V1_QC_webpage_mac.sh /enigmaDTI/QC_ENIGMA/QC_FA_V1/
+    
+This script will create a webpage called enigmaDTI_FA_V1_QC.html in the same folder as your QC output. To open the webpage in a browser in a Linux environment type:
+
+    firefox /enigmaDTI/QC_ENIGMA/QC_FA_V1/enigmaDTI_FA_V1_QC.html
+    
+Scroll through each set of images to check that the vector directions are correct. For closer inspection, clicking on a subject’s preview image will provide a larger image. If you want to check the segmentation on another computer, you can just copy over the whole /enigmaDTI/QC_ENIGMA/QC_FA_V1/ output folder to your computer and open the webpage from there.
+
+Congrats! Now you should have all you need to make sure your FA images turned out OK and their vector fields are aligned!
