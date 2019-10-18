@@ -35,10 +35,13 @@ A few of the different denoising methods include:
 ### Gibbs ringing artifact correction
 Gibbs-ringing is an artifact that is often displayed in MRI images as spurious oscillations nearby sharp image gradients at tissue boundaries. This can be corrected using the method of local subvoxel-shifts proposed by [Kellner et al., 2015](https://www.ncbi.nlm.nih.gov/pubmed/26745823).
 
-Notes:
-*    Should be performed directly after denoising and before any other preprocessing steps
-*    This method was developed to work on images acquired with full k-space coverage
-*    "...partial Fourier acquisition demonstrates that incomplete k‐space acquisition schemes propagate the artifact in an obscure nonobvious manner, which might lead to a misinterpretation of image features"
+* You can correct your data using the tool directly from the paper [unring](https://bitbucket.org/reisert/unring/src/master/), or MRtrix's wrapper implementation [mrdegibbs](https://mrtrix.readthedocs.io/en/latest/reference/commands/mrdegibbs.html)
+  
+_Notes:_
+  * Should be performed directly after denoising and before any other preprocessing steps
+  * This method was developed to work on images acquired with full k-space coverage
+    * "...partial Fourier acquisition demonstrates that incomplete k‐space acquisition schemes propagate the artifact in an obscure nonobvious manner, which might lead to a misinterpretation of image features"
+    * Therefore it is imperative to check your data. You can find this information regarding partial k-space coverage in the DICOM tuple [(0018,0022)](http://dicomlookup.com/lookup.asp?sw=Tnumber&q=(0018,0022)) 
 
 ### Correct for Eddy Current distortions, movement using affine registration
 * A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command.
@@ -46,14 +49,13 @@ Notes:
 
 ### Create a mask for your data.
 * FSL’s bet2 offers a solution that is quite robust for many datasets.
-* Additionally, MRtrix's _dwi2mask_ command utilizes directional information to generate a mask that may offer a better option for your data
+* Additionally, MRtrix's [dwi2mask](https://mrtrix.readthedocs.io/en/latest/reference/commands/dwi2mask.html) command utilizes directional information to generate a mask that may offer a better option for your data
 
-###  N4 bias field correction
-Often times, data is affected by B1 field inhomogeneity. A DWI series can be corrected using N4 bias field correction.
-* N4 correction is available using ANTs or FSL FAST
-* There is a DWI wrapper for these two options using MRtrix called _dwibiascorrect_
-
-_Note: (explain how an iterative N4/mask process might be helpful here_
+### Bias field correction
+Often times, data is affected by B1 field inhomogeneity resulting in signal intensity differences throughout the image. A DWI series can be corrected for this using:
+* [ANTs](https://www.ncbi.nlm.nih.gov/pubmed/?term=%22N4%22+AND+%22Tustison+N4ITK%22) or [FSL FAST](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FAST)
+* There is also a DWI wrapper for these two options using MRtrix called [dwibiascorrect](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwibiascorrect.html)
+_Note: (explain how an iterative N4/mask process might be helpful here)_
 
 ### Correct for EPI induced susceptibility artifacts — this is particularly an issue at higher magnetic fields. (if you only have one phase encoding direction)
 * If you have two opposing b0s and a sufficient amount of diffusion directions obtained, you may use FSL’s TOPUPand EDDY for distortion correction.
