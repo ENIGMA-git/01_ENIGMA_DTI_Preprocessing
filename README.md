@@ -196,4 +196,6 @@ This script will create a webpage called enigmaDTI_FA_V1_QC.html in the same fol
     
 Scroll through each set of images to check that the vector directions are correct. For closer inspection, clicking on a subject’s preview image will provide a larger image. If you want to check the segmentation on another computer, you can just copy over the whole /enigmaDTI/QC_ENIGMA/QC_FA_V1/ output folder to your computer and open the webpage from there.
 
+(ADD IMAGES HERE)
+
 Congrats! Now you should have all you need to make sure your FA images turned out OK and their vector fields are aligned!
