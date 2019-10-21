@@ -52,6 +52,7 @@ _Notes:_
 ### Correct for Eddy Current distortions and movement
 * A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command. [ADD MORE INFO HERE REGARDING TXT FILES NEEDED?]
 * Additionally, MRtrix has a wrapper for this called [dwipreproc](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwipreproc.html)
+* HD-BET?
 
 ### Create a mask for your data.
 * FSL’s bet2 offers a solution that is quite robust for many datasets.
