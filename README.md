@@ -20,7 +20,7 @@ For those that have yet to process DTI data, various suggestions are outlined he
 * If you have multiple b0, were they acquired with the same encoding gradient? If not, slight variations in processing will be needed.
 
 ### Denoising
-There are several different denoising methods that can be appropriately used for the data you have. A few of them are listed below. NOTE: *This is the first step that needs to be taken after dicom to nifti conversion.*
+There are several different denoising methods that can be appropriately used for your data. A few of them are listed below. NOTE: *This is the first step that needs to be taken after dicom to nifti conversion.*
 Before deciding on which method, you will need to check 
  * Whether or not the data acquired was zero-filled at acquisition (typically done on GE scanners). If it is, LPCA will not work effectively and consideration of AONLM/MP-PCA filters may be a better choice
 
@@ -35,6 +35,7 @@ A few of the different denoising methods include:
     * _"exploits the intrinsic redundancy in diffusion MRI using universal properties of the eigenspectrum of random covariance matrices, and removes noise-only principal components -- thereby enabling signal-to-noise ratio enhancements [[Veraart et al., 2016]](https://www.ncbi.nlm.nih.gov/pubmed/27523449)."_
         * code located [here](https://github.com/sunenj/MP-PCA-Denoising) and an MRtrix wrapper is also available called [dwidenoise](https://mrtrix.readthedocs.io/en/latest/reference/commands/dwidenoise.html)
 
+![raw](images/raw_dwi.png) ![denoised](images/denoised_dwi.png)
 
 ###### add images for each step maybe?
 
