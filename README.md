@@ -35,9 +35,10 @@ A few of the different denoising methods include:
     * _"exploits the intrinsic redundancy in diffusion MRI using universal properties of the eigenspectrum of random covariance matrices, and removes noise-only principal components -- thereby enabling signal-to-noise ratio enhancements [[Veraart et al., 2016]](https://www.ncbi.nlm.nih.gov/pubmed/27523449)."_
         * code located [here](https://github.com/sunenj/MP-PCA-Denoising) and an MRtrix wrapper is also available called [dwidenoise](https://mrtrix.readthedocs.io/en/latest/reference/commands/dwidenoise.html)
 
-![raw](images/raw_dwi.png) ![denoised](images/denoised_dwi.png)
+_example of raw dwi gradient direction (left) and LPCA denoised dwi gradient direction (right):_
+    
+>![raw](images/raw_dwi.png)![denoised](images/denoised_dwi.png)
 
-###### add images for each step maybe?
 
 ### Gibbs ringing artifact correction
 Gibbs-ringing is an artifact that is often displayed in MRI images as spurious oscillations nearby sharp image gradients at tissue boundaries. This can be corrected using the method of local subvoxel-shifts proposed by [Kellner et al., 2015](https://www.ncbi.nlm.nih.gov/pubmed/26745823).
@@ -51,13 +52,20 @@ _Notes:_
     * Therefore it is imperative to check your data. You can find this information regarding partial k-space coverage in the DICOM tuple [(0018,0022)](http://dicomlookup.com/lookup.asp?sw=Tnumber&q=(0018,0022)) 
 
 ### Correct for Eddy Current distortions and movement
-* A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command. [ADD MORE INFO HERE REGARDING TXT FILES NEEDED?]
+* A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command. 
+    * There are a few parameters you will need to learn about your data before performing this step. They include:
+        *  
+        *  
+        *  
+        *  
+        *  
 * Additionally, MRtrix has a wrapper for this called [dwipreproc](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwipreproc.html)
-* HD-BET?
+
 
 ### Create a mask for your data.
 * FSL’s bet2 offers a solution that is quite robust for many datasets.
 * Additionally, MRtrix's [dwi2mask](https://mrtrix.readthedocs.io/en/latest/reference/commands/dwi2mask.html) command utilizes directional information to generate a mask that may offer a better option for your data
+* HD-BET?
 
 ### Bias field correction
 Often times, data is affected by B1 field inhomogeneity resulting in signal intensity differences throughout the image. A DWI series can be corrected for this using:
