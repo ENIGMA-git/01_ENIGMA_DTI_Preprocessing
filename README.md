@@ -54,6 +54,7 @@ _Notes:_
 ### Correct for Eddy Current distortions and movement
 * A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command. 
     * There are a few parameters you will need to learn about your data before performing this step. They include:
+       
         *  
         *  
         *  
