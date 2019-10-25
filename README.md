@@ -1,4 +1,18 @@
 # Preprocessing
+
+
+#### Table of Contents
+- [Dicom Conversion](#dicom-conversion)
+- [Denoising](#denoising)
+- [Gibbs ringing artifact correction](#gibbs-ringing-artifact-correction)
+- [Correct for Eddy Current distortions and movement](#correct-for-eddy-current-distortions-and-movement)
+    + AP/PA
+    + Only one phase encoding
+- [Create a mask for your data](#create-a-mask-for-your-data)
+- [Bias field correction](#bias-field-correction)
+
+
+
 By preprocessing, we are referring to converting your images from the raw DICOM to FA images for each subject and quality controlling along the way to remove scans with abnormalities and artifacts.There can be several ways to pre-process your diffusion weighted data in order to maximize the quality and efficiency of your processing.
 We will therefore not require a specific protocol to be followed with any particular software, as long as the appropriate steps are performed. This will allow maximal integration with current pipelines and ensure optimal processing per site if available, and allow sites to:
 
@@ -13,7 +27,7 @@ If you have FA measures maps calculated and registered already, we can work with
 If you have already processed your data, please email support.enigmaDTI@ini.usc.edu to let us know your processing workflow. Also if you would like to update this page with any particulars for your methods, please let us know and we would be happy to work in additional options.
 For those that have yet to process DTI data, various suggestions are outlined here. A basic series of steps are as follows: NOTE: most of this can be done in multiple ways depending on your data. please do not hesitate to contact us for support .
 
-### Convert DICOM images to DWI set and T1-weighted set and other data acquired.
+### Dicom Conversion
 * Determine how your DWI set(s) are organized
 * How many many acquisitions do you have? Multiple acquisitions can be merged for optimal signal-to-noise ratio.
 * How many b0s do you have and where are they with respect to the full series? (Often the b0 image(s) is/are the first volumes in the DWI set)
@@ -63,7 +77,7 @@ _Notes:_
 * Additionally, MRtrix has a wrapper for this called [dwipreproc](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwipreproc.html)
 
 
-### Create a mask for your data.
+### Create a mask for your data
 * FSL’s bet2 offers a solution that is quite robust for many datasets.
 * Additionally, MRtrix's [dwi2mask](https://mrtrix.readthedocs.io/en/latest/reference/commands/dwi2mask.html) command utilizes directional information to generate a mask that may offer a better option for your data
 * HD-BET?
