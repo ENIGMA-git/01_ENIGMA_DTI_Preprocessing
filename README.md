@@ -66,14 +66,29 @@ _Notes:_
     * Therefore it is imperative to check your data. You can find this information regarding partial k-space coverage in the DICOM tuple [(0018,0022)](http://dicomlookup.com/lookup.asp?sw=Tnumber&q=(0018,0022)) 
 
 ### Correct for Eddy Current distortions and movement
-* A convenient option for this is FSL’s [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide) command. 
-    * There are a few parameters you will need to learn about your data before performing this step. They include:
-       
-        *  
-        *  
-        *  
-        *  
-        *  
+* Outlined below are tools used for eddy correction
+    * eddy_correct
+    * fdt_rotate_bvecs
+    * [topup](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup)
+    * [applytopup](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup/ApplyTopupUsersGuide)
+    * [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide)
+        * a worthwhile tool that allows you to correct for current-induced distortions and subject movement.
+        * generally, this tool can work on most datasets although it is beneficial for any one or combination of the following:
+            1.    diffusion encoding gradients that span the entire sphere
+            2.    two phase encoding directions (blip-up/blip-down)
+            3.    higher b-value data   
+    * [ENIGMA-DTI EPI Correction](https://git.ini.usc.edu/ehaddad/02_enigma-dti-epi-correction)   
+* It can sometimes be confusing what tools to use for the data you have so we've outlined which preprocessing steps to take based on your data:
+    *  Low # of direction data (< 10-15 directions for b=1500 and < ~30-40 directions for b=5000 )
+        * eddy_correct, fdt_rotate_bvecs
+    * HARDI/Multi-shell data
+        * eddy 
+    * Only one phase-encoding direction
+        * eddy/(eddy_correct +fdt_rotate_bvecs), ENIGMA-DTI EPI Correction
+    * Two(opposite) phase encoding directions
+        * topup, applytopup, eddy
+ 
+
 * Additionally, MRtrix has a wrapper for this called [dwipreproc](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwipreproc.html)
 
 
