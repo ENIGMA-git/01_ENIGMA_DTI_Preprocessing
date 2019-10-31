@@ -74,7 +74,7 @@ _Notes:_
     * fdt_rotate_bvecs
     * [topup](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup)
         * a tool that estimates the susceptibility induced off-resonance field 
-        * the [winner](https://www.biorxiv.org/content/biorxiv/early/2019/10/29/766139.full.pdf) in a comparison against 6 other methods 
+        * the [winner](https://www.biorxiv.org/content/10.1101/766139v2.abstract?%3Fcollection=) in a comparison against 6 other methods 
     * [applytopup](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup/ApplyTopupUsersGuide)
     * [eddy](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide)
         * a worthwhile tool that allows you to correct for current-induced distortions and subject movement.
