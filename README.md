@@ -52,7 +52,7 @@ A few of the different denoising methods include:
 
 _example of raw dwi gradient direction (left) and LPCA denoised dwi gradient direction (right):_
     
->![raw](images/raw_dwi.png)![denoised](images/denoised_dwi.png)
+>![denoised](images/denoised.png)
 
 
 ### Gibbs ringing artifact correction
@@ -83,9 +83,13 @@ _Notes:_
         * additional features include slice-to-volume movement correction and susceptibility-by-movement interactions with eddy correction    
     * [ENIGMA-DTI EPI Correction](https://git.ini.usc.edu/ehaddad/02_enigma-dti-epi-correction)
         * a registration based technique that uses the non-deformed T1 image as a guide for registration 
+
+_example of opposite phase encoding images that have been corrected:_
+>![eddy_corrected](images/eddy_corrected.png)
+
 * It can sometimes be confusing what tools to use for the data you have so we've outlined which preprocessing steps to take based on your data (you may have to use a combination of these steps if your data meets more than one qualification):
     #### Low number of directions 
-    - (< 10-15 directions for b=1500 and < ~30-40 directions for b=5000 )
+    - (< 10-15 directions for b=1500 and < ~30-40 directions for b=5000)
     - *eddy_correct, fdt_rotate_bvecs*
     #### Only one phase-encoding direction
     - eddy/(eddy_correct +fdt_rotate_bvecs), *ENIGMA-DTI EPI Correction*
