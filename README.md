@@ -1,15 +1,13 @@
 # Preprocessing
-
-
 #### Table of Contents
 - [Dicom Conversion](#dicom-conversion)
 - [Denoising](#denoising)
 - [Gibbs ringing artifact correction](#gibbs-ringing-artifact-correction)
 - [Correct for Eddy Current distortions and movement](#correct-for-eddy-current-distortions-and-movement)
-    + [Low # of directions](low-#-of-directions-(<-10-15-directions-for-b=1500-and-<-~30-40-directions-for-b=5000-))
-    + [Only one phase encoding](only-one-phase-encoding-direction)
-    + [Two(opposite) phase encoding directions]()
-    + [HARDI/Multi-shell data]()
+    + [Low number of directions](#low-number-of-directions)
+    + [Only one phase-encoding direction](#only-one-phase-encoding-direction)
+    + [Two opposite phase encoding directions](#two-opposite-phase-encoding-directions)
+    + [HARDI or multi-shell data](#hardi-or-multi-shell-data)
 - [Create a mask for your data](#create-a-mask-for-your-data)
 - [Bias field correction](#bias-field-correction)
 
@@ -86,14 +84,15 @@ _Notes:_
     * [ENIGMA-DTI EPI Correction](https://git.ini.usc.edu/ehaddad/02_enigma-dti-epi-correction)
         * a registration based technique that uses the non-deformed T1 image as a guide for registration 
 * It can sometimes be confusing what tools to use for the data you have so we've outlined which preprocessing steps to take based on your data (you may have to use a combination of these steps if your data meets more than one qualification):
-    *  Low # of directions (< 10-15 directions for b=1500 and < ~30-40 directions for b=5000 )
-        * **eddy_correct, fdt_rotate_bvecs**
-    * Only one phase-encoding direction
-        * eddy/(eddy_correct +fdt_rotate_bvecs), **ENIGMA-DTI EPI Correction**
-    * Two(opposite) phase encoding directions
-        * **topup, applytopup, eddy**
-    * HARDI/Multi-shell data
-        * **eddy** 
+    #### Low number of directions 
+    - (< 10-15 directions for b=1500 and < ~30-40 directions for b=5000 )
+    - *eddy_correct, fdt_rotate_bvecs*
+    #### Only one phase-encoding direction
+    - eddy/(eddy_correct +fdt_rotate_bvecs), *ENIGMA-DTI EPI Correction*
+    #### Two opposite phase encoding directions
+    - *topup, applytopup, eddy*
+    #### HARDI or multi-shell data
+    - *eddy* 
 
 * Additionally, MRtrix has a wrapper script where you specify the encoding scheme with flags. This is useful if you want to save time in creating associated text files for eddy. It is called [dwipreproc](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwipreproc.html)
 
