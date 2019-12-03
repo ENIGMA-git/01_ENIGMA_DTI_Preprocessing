@@ -37,12 +37,12 @@ During this process you'll want to take note of the following:
 ### Denoising
 There are several different denoising methods that can be appropriately used for your data. A few of them are listed below. NOTE: *This is the first step that needs to be taken after dicom to nifti conversion.*
 Before deciding on which method, you will need to check 
- * Whether or not the data acquired was zero-filled at acquisition (typically done on GE scanners). If it is, LPCA will not work effectively and consideration of AONLM/MP-PCA filters may be a better choice
 
 A few of the different denoising methods include:
  * LPCA
     * _"takes into consideration the multicomponent nature of multi-directional DWI datasets such as those employed in diffusion imaging and reduces random noise in multicomponent DWI by locally shrinking less significant Principal Components using an overcomplete approach [[Manjón et al., 2013]](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073021)."_
         * download located [here](https://drive.google.com/file/d/0B9aYHyqVxr04aEpobURaZFhNTmM/edit) and filter documentation located [here](https://sites.google.com/site/pierrickcoupe/softwares/denoising-for-medical-imaging/dwi-denoising/dwi-denoising-software)   
+        * zero-filled data may benefit from the DiPy implementation of LPCA located [here](https://dipy.org/documentation/1.0.0./reference/dipy.denoise/)
  * AONLM
     * _"designed for spatially varying noise typically presents in parallel imaging, information regarding the local image noise level is used to adjust the amount of denoising strength of the filter [[Manjón et al., 2011]](https://www.hal.inserm.fr/inserm-00454564/en/)."_
         * download located [here](https://drive.google.com/file/d/0B9aYHyqVxr04aEpobURaZFhNTmM/edit) and filter documentation located [here](https://sites.google.com/site/pierrickcoupe/softwares/denoising-for-medical-imaging/dwi-denoising/dwi-denoising-software)    
