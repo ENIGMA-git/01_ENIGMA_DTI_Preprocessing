@@ -93,6 +93,7 @@ _example of opposite phase encoding images that have been corrected:_
     - *eddy_correct, fdt_rotate_bvecs*
     #### Only one phase-encoding direction
     - eddy/(eddy_correct +fdt_rotate_bvecs), *ENIGMA-DTI EPI Correction*
+    - generate a synthetic opposite phase encoding b0 using [*Synb0-DISCO*](https://github.com/MASILab/Synb0-DISCO), *topup, applytopup, eddy*
     #### Two opposite phase encoding directions
     - *topup, applytopup, eddy*
     #### HARDI or multi-shell data
