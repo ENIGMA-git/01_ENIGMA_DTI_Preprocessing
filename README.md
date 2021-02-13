@@ -88,15 +88,18 @@ _example of opposite phase encoding images that have been corrected:_
 >![eddy_corrected](images/eddy_corrected.png)
 
 * It can sometimes be confusing what tools to use for the data you have so we've outlined which preprocessing steps to take based on your data (you may have to use a combination of these steps if your data meets more than one qualification):
+    
+
     #### Low number of directions 
     - (< 10-15 directions for b=1500 and < ~30-40 directions for b=5000)
     - *eddy_correct, fdt_rotate_bvecs*
     #### Only one phase-encoding direction
-    - eddy/(eddy_correct +fdt_rotate_bvecs), *ENIGMA-DTI EPI Correction*
+    - *eddy/(eddy_correct +fdt_rotate_bvecs), ENIGMA-DTI EPI Correction*
     - generate a synthetic opposite phase encoding b0 using [*Synb0-DISCO*](https://github.com/MASILab/Synb0-DISCO), *topup, eddy*
     #### Two opposite phase encoding directions
     - *topup, eddy*
 
+### 
 * Additionally, MRtrix has a wrapper script where you specify the encoding scheme with flags. This is useful if you want to save time in creating associated text files for eddy. It is called [dwipreproc](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwipreproc.html)
 
 
