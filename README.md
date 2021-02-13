@@ -96,8 +96,6 @@ _example of opposite phase encoding images that have been corrected:_
     - generate a synthetic opposite phase encoding b0 using [*Synb0-DISCO*](https://github.com/MASILab/Synb0-DISCO), *topup, eddy*
     #### Two opposite phase encoding directions
     - *topup, eddy*
-    #### HARDI or multi-shell data
-    - *eddy* 
 
 * Additionally, MRtrix has a wrapper script where you specify the encoding scheme with flags. This is useful if you want to save time in creating associated text files for eddy. It is called [dwipreproc](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwipreproc.html)
 
