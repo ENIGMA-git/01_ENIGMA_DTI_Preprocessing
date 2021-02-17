@@ -87,7 +87,7 @@ _Notes:_
 _example of opposite phase encoding images that have been corrected:_
 >![eddy_corrected](images/eddy_corrected.png)
 
-* It can sometimes be confusing what tools to use for the data you have so we've outlined which preprocessing steps to take based on your data (you may have to use a combination of these steps if your data meets more than one qualification):
+* It can sometimes be confusing what tools to use for the data you have so we've outlined which preprocessing steps to take based on your data:
     
 
     #### Low number of directions 
