@@ -111,7 +111,7 @@ _example of opposite phase encoding images that have been corrected:_
 ### Bias field correction
 Often times, data is affected by B1 field inhomogeneity resulting in signal intensity differences throughout the image. A DWI series can be corrected for this using:
 * [ANTs](https://www.ncbi.nlm.nih.gov/pubmed/?term=%22N4%22+AND+%22Tustison+N4ITK%22) or [FSL FAST](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FAST)
-* There is also a DWI wrapper for these two options using MRtrix called [dwibiascorrect](https://mrtrix.readthedocs.io/en/latest/reference/scripts/dwibiascorrect.html)
+* There is also a DWI wrapper for these two options using MRtrix called [dwibiascorrect](https://mrtrix.readthedocs.io/en/latest/reference/commands/dwibiascorrect.html)
 
 _Note:_ You may find it helpful to follow an iterative process where correcting for bias field first and using that as an input, may provide a better mask where bias field correction can be performed again 
 
