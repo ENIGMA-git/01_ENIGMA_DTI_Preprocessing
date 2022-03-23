@@ -81,7 +81,7 @@ _Notes:_
             2.    two phase encoding directions (blip-up/blip-down)
             3.    higher b-value data
         * additional features include slice-to-volume movement correction and susceptibility-by-movement interactions with eddy correction    
-    * [ENIGMA-DTI EPI Correction](https://git.ini.usc.edu/ehaddad/02_enigma-dti-epi-correction)
+    * [ENIGMA-DTI EPI Correction](https://github.com/ENIGMA-git/ENIGMA_DTI_02_EPI_Correction)
         * a registration based technique that uses the non-deformed T1 image as a guide for registration 
 
 _example of opposite phase encoding images that have been corrected:_
