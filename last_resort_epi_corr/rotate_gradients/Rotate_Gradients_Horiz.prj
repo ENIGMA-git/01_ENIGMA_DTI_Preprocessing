@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<project>
+
+  <MATLABPath>
+    <Directory>/ifs/hardi/Neda/SCRIPTS/Rotate_Gradients/Horiz</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/compiler/deploy</Directory>
+    <Directory>/usr/local/spm5-10.24.2007-1_64bit</Directory>
+    <Directory>/usr/local/spm5-10.24.2007-1_64bit/canonical</Directory>
+    <Directory>/usr/local/spm5-10.24.2007-1_64bit/templates</Directory>
+    <Directory>/usr/local/spm5-10.24.2007-1_64bit/toolbox</Directory>
+    <Directory>/usr/local/spm5-10.24.2007-1_64bit/tpm</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/general</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/ops</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/lang</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/elmat</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/elfun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/specfun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/matfun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/datafun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/polyfun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/funfun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/sparfun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/scribe</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/graph2d</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/graph3d</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/specgraph</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/graphics</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/uitools</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/strfun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/imagesci</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/iofun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/audiovideo</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/timefun</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/datatypes</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/verctrl</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/codetools</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/helptools</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/demos</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/timeseries</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/hds</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/guide</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/matlab/plottools</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/local</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/shared/controllib</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/bioinfo</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/biolearning</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/microarray</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/mass_spec</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/proteins</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/biomatrices</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/biodemos</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/bioinfo/graphtheory</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/compiler</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/images/images</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/images/imuitools</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/images/imdemos</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/images/iptutils</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/shared/imageslib</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/images/medformats</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/signal/signal</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/signal/sigtools</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/signal/sptoolgui</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/signal/sigdemos</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/shared/spcuilib</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/shared/dastudio</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/stats</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/shared/optimlib</Directory>
+    <Directory>/usr/local/matlab-7.4-1_64bit/toolbox/symbolic</Directory>
+  </MATLABPath>
+
+  <MCCProperties>
+    <output/>
+    <wrapper>
+      <type>main</type>
+      <component_name>Rotate_Gradients_Horiz</component_name>
+    </wrapper>
+    <link>exe</link>
+    <create_vb_wrapper>false</create_vb_wrapper>
+    <intermediate_dir></intermediate_dir>
+    <output_dir></output_dir>
+    <generate_code_only>false</generate_code_only>
+    <verbose>false</verbose>
+    <MCR_runtime_options>
+      <share_mcr>false</share_mcr>
+    </MCR_runtime_options>
+    <options_file/>
+    <toolboxes_on_path shortcut="all"/>
+    <debug>false</debug>
+    <warning shortcut="default"/>
+    <license_file/>
+  </MCCProperties>
+
+  <file_info>
+    <category name="Main function">
+      <file>/ifs/hardi/Neda/SCRIPTS/Rotate_Gradients/Horiz/Rotate_Gradients_Horiz.m</file>
+    </category>
+    <category name="Other files"/>
+    <category name="C/C++ files"/>
+  </file_info>
+
+</project>

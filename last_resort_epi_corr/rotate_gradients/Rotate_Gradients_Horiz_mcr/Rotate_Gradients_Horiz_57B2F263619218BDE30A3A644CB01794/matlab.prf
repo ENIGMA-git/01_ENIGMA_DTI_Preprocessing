@@ -1,0 +1,24 @@
+#MATLAB Preferences
+#Thu Sep 09 11:55:06 PDT 2010
+RLHiddenB2_WB_2006b_1=I16184
+RLOrderB2_WB_2006b_1=S0:1:2:3:
+RLPrevInitB2_WB_2006b_1=Btrue
+FileBrowserFiveColumnWidths=S[150 100 75 150 400]
+MatlabExitConfirm=Bfalse
+RLWidthB2_WB_2006b_1_3=I50
+RLWidthB2_WB_2006b_1_2=I50
+RLWidthB2_WB_2006b_1_1=I130
+RLWidthB2_WB_2006b_1_0=I130
+EditorMRU9=S
+EditorMRU8=S
+MatlabErrorLogReportTime=J4694555578423405749
+EditorMRU7=S
+EditorMRU6=S
+EditorMRU5=S
+ArrayEditor_CS_Format=I0
+EditorMRU4=S
+EditorMRU3=S
+CommandWindowClearConfirmation=Btrue
+EditorMRU2=S
+FileBrowserFiveColumnOrder=S[0 1 2 3 4]
+EditorMRU1=S/ifs/adni/jstein/TwinsGWAS/MakeKinship.m
