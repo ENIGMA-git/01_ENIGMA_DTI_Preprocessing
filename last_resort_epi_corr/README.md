@@ -1,4 +1,5 @@
-* As a last resort, a subject’s DWI images can be adjusted through high dimensional warping of the b0 to a high-resolution structural (T1- or T2- weighted) image of the same subject not acquired using EPI. This requires multiple steps:
+## Last resort EPI correction
+* A subject’s DWI images can be adjusted through high dimensional warping of the b0 to a high-resolution structural (T1- or T2- weighted) image of the same subject not acquired using EPI. This requires multiple steps:
     * _Make sure skull-stripping has been performed on both b0 and T1-weighted scans._
     * _Make sure T1-weighted scans have undergone inhomogeneity (NU) correction._
     * _Make sure T1-weighted scans and the DWI are aligned!! Check for L/R flipping!!_
