@@ -73,9 +73,8 @@ A few of the different denoising methods in order of recommendation include:
 * You may choose to use tools like FSL’s `slicesdir` to make slice wise PNGs to QC. 
 
 <p align="center">
-<img src="images/eDTI_denoising.png" width="90%" height="50%">
+<img src="figures/eDTI_denoising.png" width="90%" height="50%">
 </p>
-
 
 ## Gibbs ringing correction
 Gibbs-ringing is an artifact that is often displayed in MRI images as spurious oscillations nearby sharp image gradients at tissue boundaries. This can be corrected using the method of local subvoxel-shifts proposed by [Kellner et al., 2015](https://www.ncbi.nlm.nih.gov/pubmed/26745823).
@@ -93,7 +92,7 @@ _Notes:_
 * You may choose to use tools like FSL’s `slicesdir` to make slice wise PNGs to QC. 
 
 <p align="center">
-<img src="images/eDTI_gibbs.png" width="90%" height="50%">
+<img src="figures/eDTI_gibbs.png" width="90%" height="50%">
 </p>
 
 
@@ -109,7 +108,7 @@ There are a few tools available when data _**have been**_ acquired with opposite
 * **SPM's [`HySCO`](http://www.diffusiontools.com/documentation/hysco.html)**
 
 <p align="center">
-<img src="images/eDTI_topup_eddy.png" width="90%" height="50%">
+<img src="figures/eDTI_topup_eddy.png" width="90%" height="50%">
 </p>
 
 If your data _**has not been**_ acquired with opposite phase encoding data, there are 2 options:
@@ -124,7 +123,7 @@ If your data _**has not been**_ acquired with opposite phase encoding data, ther
 
 
 <p align="center">
-<img src="images/slicesdir_distortion.png" width="100%" height="100%">
+<img src="figures/slicesdir_distortion.png" width="100%" height="100%">
 </p>
 
 
@@ -139,7 +138,7 @@ Masking will be most successful if run on the undistorted b0 (i.e., output from 
 
 
 <p align="center">
-<img src="images/example_masks.png" width="90%" height="50%">
+<img src="figures/example_masks.png" width="90%" height="50%">
 </p>
 
 ## Eddy current correction
